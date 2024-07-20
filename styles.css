@@ -32,6 +32,17 @@ header {
     box-sizing: border-box;
 }
 
+h2{
+    font-size: 1.5em;
+    text-shadow: #000 2px 2px 2px;
+    color: white;
+}
+
+h1{
+    font-size: 2em;
+    text-shadow: #000 4px 4px 12px;
+    color: #fff;   
+}
 .header-container h1 {
     margin: 0;
 }
@@ -90,7 +101,7 @@ main {
     position: relative;
     background-color: #ffe8e8; /* Hellgrauer Hintergrund für den Shop */
     color: white;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-family: 'Comfortaa', sans-serif;
     font-weight: 500;
     margin: 0;
@@ -98,7 +109,7 @@ main {
     background-image: url('https://alex11902.github.io/Kreativ-Konzeption/images/Image_lake_Blackforest.png');
     background-position: center;
     background-size: cover;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* text-shadow: 4px 4px 8px rgba(0, 0, 0, 1); */
     text-align: left;
 }
 
@@ -239,6 +250,29 @@ button:hover {
     height: auto;
     border-radius: 8px; /* Gerundete Ecken für das Bild */
     margin-bottom: 10px;
+    display: block;
+}
+
+.image-container {
+    position: relative;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.image-container:hover .hover-image {
+    opacity: 1;
+}
+
+.image-container:hover .normal-image {
+    opacity: 0;
 }
 
 .product-box h3 {
