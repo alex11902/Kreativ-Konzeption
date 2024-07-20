@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+html {
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Header */
+header {
+    background-color: lightseagreen;
+    color: bisque;
+    padding: 20px;
+    position: relative;
+    min-height: 100px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-container h1 {
+    margin: 0;
+}
+
+.header-container a {
+    margin: 1%;
+    color: black;
+    background-color: rgba(250, 235, 215, 0.629);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    font-family: 'Courier New';
+}
+
+.header-container a:hover {
+    transform: scale(0.9);
+    color: aliceblue;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Abstand zwischen den Links */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hauptinhalt */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den Inhalt horizontal */
+    justify-content: center; /* Zentriert den Inhalt vertikal */
+    position: relative;
+    background-color: #ffe8e8; /* Hellgrauer Hintergrund für den Shop */
+    color: aliceblue;
+    font-size: 18px;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 150px;
+    background-image: url('/images/Image_lake_Blackforest.png');
+    background-position: center;
+    background-size: cover;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-container a {
+        font-size: 24px;
+        padding: 12px 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    main {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .product-box {
+        width: 200px; /* Kleinere Produktboxen auf Tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container a {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    main {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .product-container {
+        gap: 15px;
+    }
+
+    .product-box {
+        width: 180px; /* Noch kleinere Produktboxen auf kleineren Tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container a {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    main {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .product-container {
+        gap: 10px;
+    }
+
+    .product-box {
+        width: 150px; /* Kleinere Produktboxen auf Smartphones */
+    }
+
+    .button {
+        font-size: 24px;
+        padding: 12px 24px;
+    }
+
+    .buy-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Buttons und Links */
+button {
+    margin: 1%;
+    color: lightseagreen;
+    background-color: rgba(250, 235, 215, 0.629);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    font-family: 'Courier New';
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: white;
+    background-color: lightseagreen;
+}
+
+.button.active {
+    background-color: burlywood; /* Hintergrundfarbe für aktivierte Buttons */
+    color: white; /* Schriftfarbe für aktivierte Buttons */
+}
+
+/* Product Section */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht das Umbrigen der Produkte bei kleineren Bildschirmen */
+    justify-content: center; /* Zentriert die Produkte horizontal */
+    gap: 20px; /* Abstand zwischen den Produkten */
+    margin: 20px 0; /* Abstand oben und unten */
+}
+
+.product-box {
+    background-color: aliceblue;
+    border-radius: 8px; /* Gerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    padding: 20px;
+    text-align: center; /* Zentriert den Text innerhalb des Produkts */
+    width: 250px; /* Festgelegte Breite der Produktboxen */
+    color: #000;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Gerundete Ecken für das Bild */
+    margin-bottom: 10px;
+}
+
+.product-box h3 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.product-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    margin: 10px 0;
+}
+
+.buy-button {
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.buy-button:hover {
+    background-color: darkseagreen;
+}
+
+/* Audio Controls */
+.audio-controls {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons horizontal */
+    align-items: center;
+    gap: 10px; /* Abstand zwischen den Buttons */
+    margin: 20px 0; /* Abstand oben und unten */
+}
+
+/* Conservation Info Section */
+.conservation-info {
+    max-width: 800px;
+    margin: 0 auto; /* Zentriert den gesamten Inhalt des Footers */
+    text-align: center;
+}
+
+.conservation-info h2, .conservation-info p {
+    text-align: center; /* Zentriert den Text innerhalb des Footers */
+}
+
+.conservation-links {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht das Umbrigen der Buttons bei kleineren Bildschirmen */
+    justify-content: center; /* Zentriert die Buttons horizontal */
+    gap: 10px; /* Abstand zwischen den Buttons */
+    margin: 20px 0; /* Abstand oben und unten */
+}
+
+.button-link {
+    color: white;
+    background-color: lightseagreen;
+    border-radius: 4px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    font-family: 'Courier New';
+    border: none; /* Keine Umrandung */
+}
+
+.button-link:hover {
+    background-color: darkseagreen;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    min-height: 200px;
+}
+
+/* Impressum */
+.impressum {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.impressum p {
+    margin: 0;
+}

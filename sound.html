@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>
+            <img src="/images/icons/forest-mountain-svgrepo-com.svg" width="33vw"  height="33vh" alt="Logo" class="logo">
+            Schwarzwald-Schützer</h1>
+        <nav>
+            <ul>
+                <li><a href="start.html">Start</a></li>
+                <li><a href="sound.html">Sound</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content" style="background-image: url(/images/Sound_image.png);">
+    <h2>Wähle Deine Entspannungs-Ambience</h2>
+    <div class="audio-controls">
+        <button class="button" id="gewitter-btn" onclick="toggleSound('gewitter', 'gewitter-btn')">
+            <img src="/images/icons/Storm.svg" alt="Gewitter" width="50" height="50">
+        </button>
+        <button class="button" id="regen-btn" onclick="toggleSound('regen', 'regen-btn')">
+            <img src="/images/icons/Rain.svg" alt="Regen" width="50" height="50">
+        </button>
+        <button class="button" id="wald-btn" onclick="toggleSound('wald', 'wald-btn')">
+            <img src="/images/icons/Forest.svg" alt="Wald" width="50" height="50">
+        </button>
+        <button class="button" id="wasserfluss-btn" onclick="toggleSound('wasserfluss', 'wasserfluss-btn')">
+            <img src="/images/icons/Waterflow.svg" alt="Wasserfluss" width="50" height="50">
+        </button>
+        <button class="button" id="wind-btn" onclick="toggleSound('wind', 'wind-btn')">
+            <img src="/images/icons/Wind.svg" alt="Wind" width="50" height="50">
+        </button>
+    </div>
+    <div class="audio-files">
+        <audio id="gewitter" src="/audio/Gewitter.wav" loop></audio>
+        <audio id="regen" src="/audio/Regen.wav" loop></audio>
+        <audio id="wald" src="/audio/Wald.wav" loop></audio>
+        <audio id="wasserfluss" src="/audio/Wasserfluss.wav" loop></audio>
+        <audio id="wind" src="/audio/Wind.wav" loop></audio>
+    </div>
+
+    </section>
+    <br>
+    <br>
+    <h5 style="font-family: Arial; font-size: medium;">Kleiner Tipp am Rande: Setze dich hin, als würdest du meditieren und schließe die Augen, für eine bessere Atmossphäre :)</h5>
+</main>
+
+<footer>
+    <section class="conservation-info">
+        <h2>Unsere Partner im Naturschutz</h2>
+        <p>
+            Durch den Kauf des Schwarzwald-Schützers unterstützen Sie folgende Non-Profit-Organisationen, die sich für den Schutz und Erhalt des Schwarzwaldes einsetzen:
+        </p>
+        <div class="conservation-links">
+            <a href="https://www.schwarzwaldverein.de/" target="_blank" class="button-link">Schwarzwaldverein e.V.</a>
+            <a href="https://baden-wuerttemberg.nabu.de/" target="_blank" class="button-link">NABU Baden-Württemberg</a>
+            <a href="https://naturparkschwarzwald.de/index_html?" target="_blank" class="button-link">Naturpark Schwarzwald Mitte/Nord e.V.</a>
+        </div>
+        
+    </section>
+    <section class="impressum">
+        <p>&copy; 2024 Schwarzwald-Schützer</p>
+        <p>Hochschule Furtwangen University, Kreativkonzeptionsprojekt.<br>All rights reserved.</p>
+    </section>
+</footer>
+
+<script>
+    function toggleSound(id, buttonId) {
+        var audio = document.getElementById(id);
+        var button = document.getElementById(buttonId);
+        
+        if (audio.paused) {
+            audio.play();
+            button.classList.add('active');
+        } else {
+            audio.pause();
+            audio.currentTime = 0;
+            button.classList.remove('active');
+        }
+    }
+
+</script>
+
+</body>
+</html>
