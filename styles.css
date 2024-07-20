@@ -89,8 +89,8 @@ main {
     justify-content: center; /* Zentriert den Inhalt vertikal */
     position: relative;
     background-color: #ffe8e8; /* Hellgrauer Hintergrund für den Shop */
-    color: aliceblue;
-    font-size: 18px;
+    color: white;
+    font-size: 1.2em;
     font-family: 'Comfortaa', sans-serif;
     font-weight: 500;
     margin: 0;
